@@ -365,7 +365,7 @@ EOM;
                 );
                 //新規チャネルのチェック
                 if(!empty($_POST[lineconnect::PARAMETER_PREFIX."channel-access-token"."new"]) && !empty($_POST[lineconnect::PARAMETER_PREFIX."channel-secret"."new"])){
-                    $new_key = substr($_POST[lineconnect::PARAMETER_PREFIX."channel-secret"."new"],0,4,);
+                    $new_key = substr($_POST[lineconnect::PARAMETER_PREFIX."channel-secret"."new"],0,4);
                     $ary_channels[] = array('prefix' => $new_key);
                 }
                 //チャンネルリスト毎にチェック
@@ -398,7 +398,7 @@ EOM;
                             }
                             $ary_option[$option_key] = $options;
                         }
-                        $ary_option['prefix'] = array('value' => substr( $ary_option['channel-secret']['value'],0,4,));
+                        $ary_option['prefix'] = array('value' => substr( $ary_option['channel-secret']['value'],0,4));
                         $channel_value[$channel_id] = $ary_option;
 
                         foreach(lineconnect::CHANNEL_OPTION as $option_key => $option_name){
